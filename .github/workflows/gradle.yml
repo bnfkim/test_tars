@@ -37,8 +37,13 @@ jobs:
     # # (4) 프로젝트 빌드
     # - name: Build with Gradle
     #   run: ./gradlew clean build -x test
+
+    - name: init with Gradle
+      uses: gradle/gradle-build-action@v2
+    - run: gradle init
       
     - name: Build with Gradle
-      uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
+      uses: gradle/gradle-build-action@v2
+      #uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
       with:
         arguments: build
